@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>supra's site</title>
-<link rel="icon" href="sup1.png">
+    <title>guess number</title>
     <style>
-        body{
-         background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
-        background-position:center;
-        
+        h1{
+            color:gray;
         }
-h1{ text-shadow: 2px 2px rgb(0, 0, 0);
-    color:rgb(0, 0, 0);
-    text-align: center;
-    margin-top: 50px;
+    button{
+        border-radius:20px ;
+        font-size: 24px;
+        width: 100px;
+        padding: 20px;
+        margin: 10px;
+    }
+    img{
+        height: 20px;
+        width:20px ;
+    }
+   input{font-size: 15PX;
+    padding: 10PX;
+    border-width: 2px;
+   }
+.sc{font-size: xx-large;
+    display: inline;
+    background-color: yellow;
 }
-p{
-
-    color:rgb(161, 63, 120);
-    text-align: center;
-    margin-top: 50px;
-
-
-}
-center{
-color: aqua;
-padding-top: 400px;
-}
-
 
 
     </style>
 </head>
-<body  style="background-image: url(sup.png);">
-    <h1 >Supra Mk4</h1>
-    <p>The Toyota Supra (Japanese: トヨタ・スープラ, Hepburn: Toyota Sūpura) is a sports car and grand tourer manufactured by the Toyota Motor Corporation beginning in 1978. The name "supra" is derived from the Latin prefix, meaning "above", "to surpass" or "go beyond".[3]
- to the Crown's and 2000GT's M engine. Interior aspects were also similar, as was the chassis code "A". Along with this name, Toyota also included its own logo for the Supra. It was derived from the original Celica logo, being blue instead of orange. This logo was used until January 1986, when the A70 Supra was introduced.</p>
-<center>
-<footer>
-<a href=""style="color:aqua">Home</a> |
-<a href=""style="color:aqua">About us</a> |
-<a href=""style="color:aqua">Contact us</a> &copy;
 
-
-</footer>
-
-
+<body>
+   <center> <h1>Guess the number</h1>
+    <input type="number" placeholder="guess num 1 to 10" id="num"><br>
+    <button onclick="guess()">Check</button>
+    <p id="result" class="re">YOU ARE right/wrong ?</p>
+    <p id="score" class="sc">Your score:10</p>
 </center>
+    <script>
 
+        var res = document.getElementById("result")
 
-
+        var scores = document.getElementById("score")
+        var scor = 10;
+        function guess() {
+            var a = Number(document.getElementById("num").value);
+            var rand = Math.floor(Math.random() * 10 + 1);
+            console.log(rand)
+            if (rand == a) {
+                res.textContent = "YOU ARE RIGHT!✅"
+                scor += 1
+                scores.textContent = "Your score:" + scor
+                alert("CONGRATS!! YOU WON")
+            }
+            else {
+                res.textContent = "YOU ARE WRONG!❌"
+                scor -= 1
+                scores.textContent = "Your score:" + scor
+                
+            }
+        }
+    </script>
 </body>
+
 </html>
