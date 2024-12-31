@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess number</title>
+    <style>
+        h1{
+            color:gray;
+        }
+    button{
+        border-radius:20px ;
+        font-size: 24px;
+        width: 100px;
+        padding: 20px;
+        margin: 10px;
+    }
+    img{
+        height: 20px;
+        width:20px ;
+    }
+   input{font-size: 15PX;
+    padding: 10PX;
+    border-width: 2px;
+   }
+.sc{font-size: xx-large;
+    display: inline;
+    background-color: yellow;
+}
+
+
+    </style>
+</head>
+
+<body>
+   <center> <h1>Guess the number</h1>
+    <input type="number" placeholder="guess num 1 to 10" id="num"><br>
+    <button onclick="guess()">Check</button>
+    <p id="result" class="re">YOU ARE right/wrong ?</p>
+    <p id="score" class="sc">Your score:10</p>
+</center>
+    <script>
+
+        var res = document.getElementById("result")
+
+        var scores = document.getElementById("score")
+        var scor = 10;
+        function guess() {
+            var a = Number(document.getElementById("num").value);
+            var rand = Math.floor(Math.random() * 10 + 1);
+            console.log(rand)
+            if (rand == a) {
+                res.textContent = "YOU ARE RIGHT!✅"
+                scor += 1
+                scores.textContent = "Your score:" + scor
+                alert("CONGRATS!! YOU WON")
+            }
+            else {
+                res.textContent = "YOU ARE WRONG!❌"
+                scor -= 1
+                scores.textContent = "Your score:" + scor
+                
+            }
+        }
+    </script>
+</body>
+
+</html>
